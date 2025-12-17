@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website giới thiệu các câu lạc bộ ngoại khóa của trường</title>
+    <style>
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      .banner {
+        position: relative;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+      }
+      .banner-title {
+        position: absolute;
+        text-shadow: 5px 5px 5px black;
+        font-size: 50px;
+        color: white;
+      }
+      .banner-img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+      }
+      .content {
+        padding: 20px;
+      }
+      .catalog {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        max-width: 1500px;
+        margin: 0 auto;
+      }
+      .catalog-item {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        justify-content: center;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.151);
+        min-height: 200px;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+      }
+
+      .catalog-item:hover {
+        transform: scale(1.005);
+        box-shadow: 5px 5px 5px rgba(22, 6, 240, 0.247);
+      }
+
+      .catalog-item h2 {
+        margin: 0;
+      }
+
+      .catalog-item img{
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-bottom: 10px;
+      }
+
+      .catalog-item p {
+        margin: 0;
+      }
+
+      .section-1,
+      .section-2,
+      .section-3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin: 30px 0 0 0;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .section-1 {
+        border: 1px solid rgba(255, 0, 0, 0.199);
+        box-shadow: 5px 5px 5px rgba(226, 140, 140, 0.151);
+      }
+
+      .section-2 {
+        border: 1px solid rgba(0, 102, 255, 0.199);
+        box-shadow: 5px 5px 5px rgba(140, 141, 226, 0.151);
+      }
+
+      .section-3 {
+        border: 1px solid rgba(0, 255, 64, 0.247);
+        box-shadow: 5px 5px 5px rgba(147, 226, 140, 0.151);
+      }
+
+      .section-2-title {
+        order: 2;
+      }
+
+      .section-2-img {
+        order: 1;
+      }
+
+      .section-1-title,
+      .section-2-title,
+      .section-3-title {
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        justify-content: center;
+        padding: 80px;
+      }
+
+      .section-1-title h3,
+      .section-2-title h3,
+      .section-3-title h3 {
+        margin: 0;
+        font-size: 30px;
+      }
+
+      .section-1-title p,
+      .section-2-title p,
+      .section-3-title p {
+        font-size: 20px;
+        text-align: left;
+      }
+
+      .section-1-img,
+      .section-2-img,
+      .section-3-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        place-items: end;
+        justify-content: end;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .info h3 {
+        margin: 0;
+      }
+
+      p {
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="banner">
+        <h1 class="banner-title">
+          Câu lạc bộ ngoại khóa trường THPT Phước Thạnh
+        </h1>
+        <img
+          class="banner-img"
+          src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1765976062/1605047_12025077_223607_02122025_pranfi.jpg"
+          alt="Logo"
+        />
+      </div>
+      <div class="content">
+        <div class="catalog">
+          <div class="catalog-item">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/achievement-award-medal-icon.png" />
+            <h2>Năng động</h2>
+            <p>
+              Mỗi hoạt động là cơ hội để học sinh khám phá bản thân, phát triển
+              kỹ năng và sống trọn đam mê tuổi trẻ.
+            </p>
+          </div>
+          <div class="catalog-item">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/achievement-award-medal-icon.png" />
+            <h2>Đam mê</h2>
+            <p>
+              Nuôi dưỡng đam mê, khơi dậy sáng tạo và giúp học sinh theo đuổi
+              điều mình yêu thích.
+            </p>
+          </div>
+          <div class="catalog-item">
+            <img src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/achievement-award-medal-icon.png" />
+            <h2>Tỏa sáng</h2>
+            <p>
+              Môi trường giúp mỗi học sinh phát huy thế mạnh, tự tin thể hiện
+              bản thân và tỏa sáng theo cách riêng.
+            </p>
+          </div>
+        </div>
+        <div class="section-1">
+          <div class="section-1-title">
+            <h3>Học siêu - Chơi đỉnh</h3>
+            <p>
+              Nhà trường chú trọng cân bằng hài hòa giữa học tập và hoạt động
+              ngoại khóa, tạo điều kiện để học sinh vừa nắm vững kiến thức nền
+              tảng, vừa phát triển các kỹ năng sống cần thiết trong cuộc sống
+              hiện đại.
+
+              Thông qua nhiều hoạt động học tập trải nghiệm, sinh hoạt
+              tập thể và câu lạc bộ đa dạng, học sinh được rèn luyện tư duy sáng
+              tạo, khả năng giao tiếp, tinh thần trách nhiệm và ý thức kỷ luật.
+
+              Môi trường học đường năng động giúp các em tự tin thể hiện bản
+              thân, phát triển toàn diện về trí tuệ, thể chất và nhân cách, sẵn
+              sàng cho những chặng đường học tập và trưởng thành phía trước.
+            </p>
+          </div>
+          <img
+            src="https://r73troypb4obj.vcdn.cloud/website02/uploads/images/62da59811a1b85413cb3b41a/danh-gia-truong-thpt-phuoc-thanh-tien-giang-co-tot-khong__3_.jpg"
+            class="section-1-img"
+          />
+        </div>
+
+        <div class="section-2">
+          <div class="section-2-title">
+            <h3>CLB Thể thao</h3>
+            <p>
+              Các câu lạc bộ thể thao mang đến môi trường rèn luyện sức khỏe,
+              tinh thần đồng đội và ý chí bền bỉ, giúp học sinh giải tỏa căng
+              thẳng sau giờ học và xây dựng lối sống lành mạnh.
+
+              Thông qua các hoạt động tập luyện và thi đấu đa dạng, học sinh được nâng cao thể
+              lực, rèn luyện tính kỷ luật, sự kiên trì và khả năng phối hợp
+              nhóm.
+
+              Đây cũng là nơi các em học cách vượt qua thử thách, hình
+              thành tinh thần trách nhiệm và nuôi dưỡng niềm đam mê vận động
+              trong môi trường học đường tích cực, năng động và tràn đầy nhiệt
+              huyết.
+            </p>
+          </div>
+          <img
+            src="https://i.ytimg.com/vi/eCj40hC9RkI/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGFMgZShWMA8=&rs=AOn4CLCiXLYKLL84gp7diKYdt3FQYn4D9Q"
+            class="section-2-img"
+            alt="section 2 img"
+          />
+        </div>
+
+        <div class="section-3">
+          <div class="section-3-title">
+            <h3>CLB Nghệ thuật</h3>
+            <p>
+                Câu lạc bộ nghệ thuật là không gian sáng tạo giúp học sinh thể
+                hiện cá tính, nuôi dưỡng cảm xúc và phát triển tài năng thông qua
+                các hoạt động âm nhạc, hội họa và biểu diễn nghệ thuật.
+
+                Tham gia câu lạc bộ, học sinh được khuyến khích khám phá khả năng
+                sáng tạo của bản thân, rèn luyện sự tự tin, khả năng biểu đạt
+                cảm xúc và tư duy thẩm mỹ.
+
+                Đây còn là môi trường giúp các em giao lưu, học hỏi, phát triển
+                kỹ năng làm việc nhóm và xây dựng sự gắn kết, góp phần hình thành
+                nhân cách toàn diện trong môi trường học đường năng động và giàu
+                cảm hứng.
+            </p>
+          </div>
+          <img
+            src="https://r73troypb4obj.vcdn.cloud/website02/uploads/images/62da59811a1b85413cb3b41b/danh-gia-truong-thpt-phuoc-thanh-tien-giang-co-tot-khong__2_.jpg"
+            class="section-3-img"
+          />
+        </div>
+      </div>
+      <div class="info">
+        <h3>Xã Phước Thạnh My Tho, Vietnam</h3>
+        <p>Trường THPT Phước Thạnh - Hoạt động ngoại khóa</p>
+      </div>
+    </div>
+  </body>
+</html>
