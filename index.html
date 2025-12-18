@@ -17,6 +17,10 @@
         --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
       }
 
+      * {
+        scroll-behavior: smooth;
+      }
+
       body {
         margin: 0;
         font-family: "Be Vietnam Pro", sans-serif;
@@ -111,6 +115,17 @@
         background: var(--secondary-color);
         border-radius: 30px;
         overflow: hidden;
+        scroll-margin-top: 6rem;
+      }
+
+      .section-gallery {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background: var(--secondary-color);
+        border-radius: 30px;
+        margin-bottom: 60px;
+        padding: 40px;
       }
 
       .section.reverse {
@@ -174,7 +189,84 @@
         opacity: 0.7;
       }
 
-      /* Responsive */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: var(--secondary-color);
+        box-shadow: var(--shadow);
+        z-index: 100;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+      }
+
+      .header-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        height: 100%;
+        margin: 0 auto;
+
+        width: 100%;
+      }
+
+      .header-wrapper a {
+        height: 100%;
+      }
+
+      .header-wrapper img {
+        height: 100%;
+      }
+
+      .header-wrapper ul {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        list-style: none;
+      }
+
+      .header-wrapper li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .header-wrapper li a {
+        text-decoration: none;
+        color: var(--text-main);
+      }
+
+      hr {
+        width: 0.5px;
+        height: 30px;
+        background-color: var(--text-muted);
+        opacity: 0.3;
+        margin: 0;
+      }
+
+      .gallery-img {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+      }
+
+      .gallery-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+      }
+
+      .gallery-img img:hover {
+        transform: scale(1.05);
+      }
+
       @media (max-width: 768px) {
         .section,
         .section.reverse {
@@ -191,6 +283,22 @@
     </style>
   </head>
   <body>
+    <header>
+      <div class="header-wrapper">
+        <a href="#">
+          <img
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766049879/images_uw2whi.jpg"
+          />
+        </a>
+        <ul>
+          <li>✍🏻<a href="#study-and-play">Học tập - Vui chơi</a></li>
+          <hr />
+          <li>⚽️<a href="#sport">CLB Thể thao</a></li>
+          <hr />
+          <li>🎨<a href="#art">CLB Nghệ thuật</a></li>
+        </ul>
+      </div>
+    </header>
     <div class="banner">
       <h1 class="banner-title">
         Câu lạc bộ ngoại khóa<br />Trường THPT Phước Thạnh
@@ -239,7 +347,7 @@
         </div>
       </div>
 
-      <div class="section">
+      <div class="section" id="study-and-play">
         <div class="section-text">
           <h3>Học siêu - Chơi đỉnh</h3>
           <p>
@@ -258,7 +366,7 @@
         />
       </div>
 
-      <div class="section reverse">
+      <div class="section reverse" id="sport">
         <div class="section-text">
           <h3>CLB Thể thao</h3>
           <p>
@@ -277,7 +385,7 @@
         />
       </div>
 
-      <div class="section">
+      <div class="section" id="art">
         <div class="section-text">
           <h3>CLB Nghệ thuật</h3>
           <p>
@@ -289,10 +397,43 @@
           </p>
         </div>
         <img
-          src="https://r73troypb4obj.vcdn.cloud/website02/uploads/images/62da59811a1b85413cb3b41b/danh-gia-truong-thpt-phuoc-thanh-tien-giang-co-tot-khong__2_.jpg"
+          src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766049227/z7339062864450_317e00bb232d94b68bfd32567e551f19_yexw9g.jpg"
           class="section-img"
           alt="Nghệ thuật"
         />
+      </div>
+
+      <div class="section-gallery">
+        <h3>Một số hình ảnh của câu lạc bộ</h3>
+        <div class="gallery-img">
+          <img
+            src="https://1clip.bacgiangtv.vn/upload/news/2_2025/untitled_10264507022025.png"
+          />
+          <img
+            src="https://images2.thanhnien.vn/Uploaded/gianglao/2022_12_09/messi-5690.jpeg"
+          />
+          <img
+            src="https://thethaovietnamplus.vn/uploads/images/2022/09/28/neyma-dap-tra-1664331205.jpg"
+          />
+          <img
+            src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/69fe/live/6e01bc20-da7d-11f0-a8dc-93c15fe68710.jpg"
+          />
+          <img
+            src="https://static.bongda24h.vn/medias/original/2020/11/11/eden-hazard.jpg"
+          />
+          <img
+            src="https://vcdn1-vnexpress.vnecdn.net/2022/10/25/-6388-1666691852.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=oq-bmpKHNXVp1yhebya_fQ"
+          />
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/220626110534-01-gareth-bale-real-madrid-180526.jpg?q=w_1110,c_fill"
+          />
+          <img
+            src="https://media.cnn.com/api/v1/images/stellar/prod/221017111358-01-karim-benzema.jpg?c=original"
+          />
+          <img
+            src="https://c.files.bbci.co.uk/71f4/live/326f1090-1765-11ef-806c-bf47bb1274cd.jpg"
+          />
+        </div>
       </div>
     </div>
 
