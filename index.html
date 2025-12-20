@@ -9,14 +9,7 @@
       rel="stylesheet"
     />
     <style>
-      :root {
-        --primary-color: #2563eb;
-        --secondary-color: #f8fafc;
-        --text-main: #1e293b;
-        --text-muted: #64748b;
-        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      }
-
+      
       * {
         scroll-behavior: smooth;
       }
@@ -24,7 +17,7 @@
       body {
         margin: 0;
         font-family: "Be Vietnam Pro", sans-serif;
-        color: var(--text-main);
+        color: #1e293b;
         background-color: #ffffff;
         line-height: 1.6;
       }
@@ -37,6 +30,7 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        flex-direction: column;
       }
 
       .banner-img {
@@ -44,31 +38,64 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        filter: brightness(0.6);
+        filter: brightness(0.6);  
       }
 
       .banner-title {
         position: relative;
         z-index: 1;
         color: white;
-        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-size: 50px;
+        text-align: center;
+        max-width: 900px;
+        padding: 0 20px;
+        text-transform: uppercase;
+        text-shadow: 2px 2px #0f172a;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin: 0;
+      }
+
+      .banner-desc {
+        position: relative;
+        z-index: 1;
+        color: white;
+        font-size: 15px;
         text-align: center;
         max-width: 900px;
         padding: 0 20px;
         text-transform: uppercase;
         font-weight: 800;
         letter-spacing: 1px;
+        text-shadow: 2px 2px #0f172a;
+        margin: 0;
+        list-style: none;
+      }
+
+      .banner button{
+        position: relative;
+        background-color:#2563eb;
+        color: white;
+        z-index: 1;
+        border:none;
+        outline: none;
+        font-size: 18px;
+        padding: 15px 20px;
+        border-radius: 30px;
+        font-weight: bold;
+        margin-top: 20px;
+        cursor: pointer;
       }
 
       .container {
-        max-width: 1200px;
+        max-width: 1500px;
         margin: 0 auto;
         padding: 60px 20px;
       }
 
       .catalog {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 30px;
         margin-bottom: 80px;
       }
@@ -80,98 +107,143 @@
         text-align: center;
         transition: all 0.3s ease;
         border: 1px solid #f1f5f9;
-        box-shadow: var(--shadow);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         cursor: pointer;
       }
 
       .catalog-item:hover {
         transform: translateY(-10px);
-        border-color: var(--primary-color);
+        border-color: #2563eb;
       }
 
       .catalog-item img {
         width: 64px;
         height: 64px;
-        margin-bottom: 20px;
       }
 
       .catalog-item h2 {
-        font-size: 1.5rem;
+        font-size: 16px;
         margin-bottom: 15px;
-        color: var(--primary-color);
+        color: #2563eb;
       }
 
       .catalog-item p {
-        color: var(--text-muted);
+        color: #64748b;
         font-size: 0.95rem;
       }
 
-      .section {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+      .section-blogs {
+        display: flex;
+        flex-direction: column;
         align-items: center;
         margin-bottom: 60px;
-        background: var(--secondary-color);
+        background: #f8fafc;
         border-radius: 30px;
         overflow: hidden;
         scroll-margin-top: 6rem;
+        padding: 30px;
+      }
+
+      .section-blogs .title h3 {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #1e293b;
+        position: relative;
+      }
+
+      .section-blogs .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+      }
+
+      .section-blogs .list .item {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        background-color: white;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .section-blogs .list .item:hover {
+        transform: translateY(-10px);
+      }
+
+      .section-blogs .list .item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .section-blogs .list .item .content {
+        padding: 20px;
+      }
+
+      .section-blogs .list .item .content h4 {
+        font-size: 15px;
+        margin: 0;
+      }
+
+      .section-blogs .list .item .content p {
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      .section-teacher {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #f8fafc;
+        border-radius: 30px;
+        padding: 40px;
+        margin-bottom: 60px;
+        scroll-margin-top: 6rem;
+      }
+
+      .section-teacher .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .section-teacher .list img {
+        max-width: 400px;
+        border-radius: 30px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .section-teacher .list img:hover {
+        transform: scale(1.05)
+      }
+
+      .section-teacher .title h3{
+        font-size: 25px;
+        margin-bottom: 40px;
+        color: #1e293b;
+        position: relative;
       }
 
       .section-gallery {
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: 10px;
-        background: var(--secondary-color);
+        background: #f8fafc;
         border-radius: 30px;
         margin-bottom: 60px;
         padding: 40px;
       }
 
-      .section.reverse {
-        direction: rtl;
-      }
-
-      .section.reverse .section-text {
-        direction: ltr;
-      }
-
-      .section-img {
-        width: 100%;
-        height: 450px;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-      }
-
-      .section:hover .section-img {
-        transform: scale(1.05);
-      }
-
-      .section-text {
-        padding: 40px;
-      }
-
-      .section-text h3 {
+      .section-gallery h3 {
         font-size: 2rem;
-        margin-bottom: 20px;
-        color: var(--text-main);
-        position: relative;
-      }
-
-      .section-text h3::after {
-        content: "";
-        display: block;
-        width: 60px;
-        height: 4px;
-        background: var(--primary-color);
-        margin-top: 10px;
-        border-radius: 2px;
-      }
-
-      .section-text p {
-        font-size: 1.05rem;
-        color: var(--text-muted);
-        white-space: normal;
+        margin-bottom: 40px;
       }
 
       footer {
@@ -195,8 +267,8 @@
         left: 0;
         width: 100%;
         height: 60px;
-        background-color: var(--secondary-color);
-        box-shadow: var(--shadow);
+        background-color: #f8fafc;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         z-index: 100;
         padding: 5px 0;
         display: flex;
@@ -208,10 +280,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        max-width: 1200px;
+        max-width: 1500px;
         height: 100%;
         margin: 0 auto;
-
         width: 100%;
       }
 
@@ -238,20 +309,20 @@
 
       .header-wrapper li a {
         text-decoration: none;
-        color: var(--text-main);
+        color: #1e293b;
       }
 
       hr {
         width: 0.5px;
         height: 30px;
-        background-color: var(--text-muted);
+        background-color: #64748b;
         opacity: 0.3;
         margin: 0;
       }
 
       .gallery-img {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 20px;
       }
 
@@ -266,20 +337,6 @@
       .gallery-img img:hover {
         transform: scale(1.05);
       }
-
-      @media (max-width: 768px) {
-        .section,
-        .section.reverse {
-          grid-template-columns: 1fr;
-          direction: ltr;
-        }
-        .section-img {
-          height: 300px;
-        }
-        .section-text {
-          padding: 30px;
-        }
-      }
     </style>
   </head>
   <body>
@@ -291,18 +348,23 @@
           />
         </a>
         <ul>
-          <li>✍🏻<a href="#study-and-play">Học tập - Vui chơi</a></li>
+          <li>✍🏻<a href="#blogs">Bài viết</a></li>
           <hr />
-          <li>⚽️<a href="#sport">CLB Thể thao</a></li>
+          <li>👩🏼‍🏫<a href="#teachers">Thầy cô</a></li>
           <hr />
-          <li>🎨<a href="#art">CLB Nghệ thuật</a></li>
+          <li>👩🏻‍🎓<a href="#teams">Đoàn đội</a></li>
         </ul>
       </div>
     </header>
     <div class="banner">
-      <h1 class="banner-title">
-        Câu lạc bộ ngoại khóa<br />Trường THPT Phước Thạnh
-      </h1>
+      <h1 class="banner-title">Trường THPT Phước Thạnh</h1>
+      <ul class="banner-desc">
+        <li>🌸 Học tốt – Sống đẹp – Ước mơ lớn 🌸</li>
+        <li>🌸 Mỗi ngày đến trường là một ngày vui 🌸</li>
+        <li>🌸 Tri thức là chìa khóa của tương lai 🌸</li>
+        <li>🌸 Học hôm nay, vững bước ngày mai 🌸</li>
+      </ul>
+      <a href="http://thptphuocthanh.tiengiang.edu.vn" target="_blank"><button>Tìm hiểu thêm về trường</button></a>
       <img
         class="banner-img"
         src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1765976062/1605047_12025077_223607_02122025_pranfi.jpg"
@@ -317,10 +379,11 @@
             src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/achievement-award-medal-icon.png"
             alt="Icon"
           />
-          <h2>Năng động</h2>
+          <h2>Kỷ luật – Trách nhiệm – Sáng tạo</h2>
           <p>
-            Mỗi hoạt động là cơ hội để học sinh khám phá bản thân, phát triển kỹ
-            năng và sống trọn đam mê tuổi trẻ.
+            Là nền tảng giúp học sinh rèn luyện nếp sống tốt, ý thức tự giác
+            trong học tập, tinh thần trách nhiệm với bản thân và tập thể, đồng
+            thời khuyến khích tư duy sáng tạo để phát triển toàn diện.
           </p>
         </div>
         <div class="catalog-item">
@@ -328,10 +391,11 @@
             src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/achievement-award-medal-icon.png"
             alt="Icon"
           />
-          <h2>Đam mê</h2>
+          <h2>Đoàn kết – Nỗ lực – Thành công</h2>
           <p>
-            Nuôi dưỡng đam mê, khơi dậy sáng tạo và giúp học sinh theo đuổi
-            những điều mình thực sự yêu thích.
+            Khuyến khích học sinh biết gắn kết, hỗ trợ lẫn nhau trong học tập và
+            hoạt động tập thể, không ngừng nỗ lực vượt qua khó khăn để cùng
+            hướng tới thành công.
           </p>
         </div>
         <div class="catalog-item">
@@ -339,99 +403,228 @@
             src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/achievement-award-medal-icon.png"
             alt="Icon"
           />
-          <h2>Tỏa sáng</h2>
+          <h2>Học tập chăm – Kết quả cao</h2>
           <p>
-            Môi trường giúp mỗi học sinh phát huy thế mạnh, tự tin thể hiện bản
-            thân và tỏa sáng theo cách riêng.
+            Khuyến khích học sinh rèn luyện tinh thần chăm chỉ, tự giác trong
+            học tập để đạt được những kết quả tốt và bền vững.
+          </p>
+        </div>
+        <div class="catalog-item">
+          <img
+            src="https://uxwing.com/wp-content/themes/uxwing/download/sport-and-awards/achievement-award-medal-icon.png"
+            alt="Icon"
+          />
+          <h2>Nói lời hay – Làm việc tốt</h2>
+          <p>
+            Giáo dục học sinh biết giao tiếp văn minh, lễ phép, cư xử đúng mực
+            và lan tỏa những hành động tốt đẹp trong học tập cũng như trong cuộc
+            sống hằng ngày.
           </p>
         </div>
       </div>
 
-      <div class="section" id="study-and-play">
-        <div class="section-text">
-          <h3>Học siêu - Chơi đỉnh</h3>
-          <p>
-            Nhà trường chú trọng cân bằng hài hòa giữa học tập và hoạt động
-            ngoại khóa, tạo điều kiện để học sinh vừa nắm vững kiến thức, vừa
-            rèn luyện kỹ năng sống.
-            <br /><br />
-            Thông qua các trải nghiệm thực tế, học sinh được rèn luyện tư duy
-            sáng tạo, khả năng giao tiếp và tinh thần trách nhiệm cao.
-          </p>
+      <div class="section-blogs" id="blogs">
+        <div class="title">
+          <h3>Những bài viết hoạt động gần đây của nhà trường</h3>
         </div>
-        <img
-          src="https://r73troypb4obj.vcdn.cloud/website02/uploads/images/62da59811a1b85413cb3b41a/danh-gia-truong-thpt-phuoc-thanh-tien-giang-co-tot-khong__3_.jpg"
-          class="section-img"
-          alt="Học tập"
-        />
+        <div class="list">
+             <div class="item">
+            <img
+              src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230377/z7347382848170_614676509e4446bad9a36ba724c19bf9_qrui7i.jpg"
+            />
+            <div class="content">
+              <h4>
+                🌟 DIỄN ĐÀN “XÂY DỰNG TÌNH BẠN ĐẸP – NÓI KHÔNG VỚI BẠO LỰC HỌC
+                ĐƯỜNG”
+              </h4>
+              <p>
+                Lúc 13g30 ngày 11/12/2025, Đoàn trường THPT Phước Thạnh tổ chức
+                Diễn đàn tư vấn “Xây dựng tình bạn đẹp – Nói không với bạo lực
+                học đường” với sự tham gia của hơn 100 đoàn viên thanh niên.<br />
+                💗 Điểm nhấn của chương trình là phần kịch chủ đề “Xây dựng tình
+                bạn đẹp – Nói không với bạo lực học đường” do các Chi đoàn thực
+                hiện.<br />
+                👉 Hãy biết lắng nghe, thấu hiểu, tôn trọng nhau và cùng nói
+                KHÔNG với bạo lực trong trường học.<br />
+                🔎 Sau phần kịch, diễn đàn tiếp tục với giao lưu cùng Ban Tư vấn
+                tâm lý học đường, giúp học sinh trang bị kỹ năng ứng xử khi mâu
+                thuẫn.<br />
+                💬 Thông điệp gửi đến tất cả học sinh:<br />
+                ✨ Một lời nói đẹp có thể thay đổi một ngày.<br />
+                ✨ Một hành động đẹp có thể thay đổi một người.<br />
+                ✨ Một tình bạn đẹp có thể thay đổi cả một môi trường học
+                đường.<br />
+              </p>
+            </div>
+          </div>
+       
+          <div class="item">
+            <img
+              src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230419/z7347379038544_1a644ba6b1353c26e7939cccf1f56c87_aknbo0.jpg"
+            />
+            <div class="content">
+              <h4>
+                ✨ HOẠT ĐỘNG TRẢI NGHIỆM THỰC TẾ: THĂM LĂNG NGUYỄN ĐÌNH CHIỂU &
+                NÔNG TRẠI HẢI VÂN - SÂN CHIM VÀM HỒ ✨
+              </h4>
+              <p>
+                Ngày 23/11/2025, thầy cô và 105 em học sinh trường THPT Phước
+                Thạnh đã có một hành trình đầy ý nghĩa khi đến tham quan Lăng
+                Nguyễn Đình Chiểu và Nông trải Hải Vân -sân chim Vàm Hồ – hai
+                địa chỉ văn hóa và sinh thái tiêu biểu của Bến Tre cũ. <br />
+                📍 Tại Lăng Nguyễn Đình Chiểu, học sinh được nghe kể về cuộc đời
+                và sự nghiệp của nhà thơ – thầy thuốc – nhà giáo Nguyễn Đình
+                Chiểu.<br />
+                🌿 Đến với Nông trại Hải Vân - sân chim Vàm Hồ, các em được khám
+                phá thiên nhiên hoang sơ, quan sát hàng chục loài chim sinh sống
+                giữa vùng sinh thái ngập mặn.<br />
+
+                💗 Chuyến trải nghiệm không chỉ đem lại kiến thức mà còn mang
+                đến niềm vui, sự gắn kết tập thể, giúp các em có thêm nhiều bài
+                học thực tế quý giá ngoài lớp học.
+              </p>
+            </div>
+          </div>
+             <div class="item">
+            <img
+              src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230338/z7347362533823_4ec88fa14f14b037a3cf4532c97fca69_syfwju.jpg"
+            />
+            <div class="content">
+              <h4>🌸 HỘI THI CẮM HOA CHÀO MỪNG 20/11 – THPT PHƯỚC THẠNH 🌸</h4>
+              <p>
+                Hòa trong không khí rộn ràng hướng về kỷ niệm 43 năm Ngày Nhà
+                giáo Việt Nam (20/11/1982 – 20/11/2025), chiều ngày 17/11/2025,
+                Đoàn Trường THPT Phước Thạnh long trọng tổ chức Hội thi Cắm hoa
+                chào mừng ngày Nhà giáo Việt Nam 20/11 với sự tham gia của 66
+                học sinh đến từ 25 lớp . Đây là một trong những hoạt động thiết
+                thực nhằm tri ân công lao to lớn của quý thầy cô, đồng thời tạo
+                sân chơi bổ ích, giàu tính sáng tạo cho học sinh toàn trường.<br />
+                • Giải Nhất: 12C1 <br />
+                • Giải Nhì: 11A5 <br />
+                • Giải Ba: 10B <br />
+                💐 Tri ân thầy cô – Tự hào truyền thống tôn sư trọng đạo!
+              </p>
+            </div>
+          </div>
+       
+        </div>
       </div>
 
-      <div class="section reverse" id="sport">
-        <div class="section-text">
-          <h3>CLB Thể thao</h3>
-          <p>
-            Nơi rèn luyện sức khỏe, tinh thần đồng đội và ý chí bền bỉ. Các hoạt
-            động thể thao giúp giải tỏa căng thẳng và xây dựng lối sống lành
-            mạnh.
-            <br /><br />
-            Học sinh được nâng cao thể lực, rèn luyện tính kỷ luật và khả năng
-            phối hợp nhóm trong môi trường đầy nhiệt huyết.
-          </p>
+      <div class="section-teacher" id="teachers">
+        <div class="title">
+          <h3>
+            ✨Thầy cô là người gieo hạt tri thức<br /><br />
+            ✨Âm thầm chắp cánh những ước mơ xanh<br /><br />
+            ✨Từng bài giảng thấm đượm ân tình<br /><br />
+            ✨Dẫn lối chúng em vững bước trưởng thành<br /><br />
+          </h3>
         </div>
-        <img
-          src="https://i.ytimg.com/vi/eCj40hC9RkI/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGFMgZShWMA8=&rs=AOn4CLCiXLYKLL84gp7diKYdt3FQYn4D9Q"
-          class="section-img"
-          alt="Thể thao"
-        />
+        <div class="list">
+          <img
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230499/z7347388270567_c2c154a69bd4a1e726306a03dc48ecd1_hjh5d5.jpg"
+          />
+          <img
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230499/z7347388259973_0fd279e03ba8f48011399a016249da29_mnsf7q.jpg"
+          />
+          <img
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230499/z7347388258111_7c31ad13c579ccf7fd1a933269c11b9a_v10pec.jpg"
+          />
+          <img
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230498/z7347388253845_5455403c0e2e5d805053a24536dc616d_m2uwvb.jpg"
+          />
+        </div>
       </div>
 
-      <div class="section" id="art">
-        <div class="section-text">
-          <h3>CLB Nghệ thuật</h3>
-          <p>
-            Không gian sáng tạo giúp học sinh thể hiện cá tính qua âm nhạc, hội
-            họa và biểu diễn. Đây là nơi nuôi dưỡng những tâm hồn nghệ sĩ trẻ.
-            <br /><br />
-            Tham gia CLB giúp các em tự tin hơn, phát triển tư duy thẩm mỹ và
-            gắn kết bạn bè có cùng sở thích.
-          </p>
+      <div class="section-blogs" id="teams">
+        <div class="title">
+          <h3>Những bài viết hoạt động của đoàn thanh niên của trường</h3>
         </div>
-        <img
-          src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766049227/z7339062864450_317e00bb232d94b68bfd32567e551f19_yexw9g.jpg"
-          class="section-img"
-          alt="Nghệ thuật"
-        />
+        <div class="list">
+          <div class="item">
+            <img
+              src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230592/z7347395002801_d49d1be4311a16aa89663a91e10e8647_dpj6lm.jpg"
+            />
+            <div class="content">
+              <h4>🌟PHÁT ĐỘNG PHONG TRÀO HỌC SINH 3 TỐT NĂM HỌC 2025 - 2026</h4>
+              <p>
+                🌀Sáng nay ngày 18/12/2025 Đoàn trường THPT Phước Thạnh tiếp tục
+                Phát động phong trào "học sinh 3 tốt" với sự tham gia của hơn 50
+                đoàn viên thanh niên.<br />
+                🌀Phong trào HS 3 tốt nhằm xây dựng môi trường, tạo động lực cho
+                hs rèn luyện, phấn đấu toàn diện trên các mặt đạo đức, học tập,
+                thể lực; góp phần nâng cao chất lượng giáo dục và đào tạo trong
+                nhà trường.<br />
+                🌀Thông qua phong trào nhằm phát hiện, tuyên dương và nhân rộng
+                các tấm gương hs tiêu biểu. Qua đó góp phần nâng cao hiệu quả
+                công tác đoàn và phong trào thanh niên của Đoàn trường THPT
+                Phước Thạnh.<br />
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230655/z7347398159086_3261859398e27307cf575094c314d056_aciqg7.jpg"
+            />
+            <div class="content">
+              <h4>
+                🌟PHONG TRÀO MỖI THÁNG MỘT NGÀY TÌNH NGUYỆN THÁNG 12: CẢI TẠO
+                VƯỜN THUỐC NAM
+              </h4>
+              <p>
+                Ngày 11/12/2025, chi đoàn giáo viên cùng 20 đoàn viên thanh niên
+                chi đoàn 11A1 tham gia cải tạo vườn thuốc nam và trồng mới các
+                loại cây xanh hoa hướng dương.<br/>
+                🌱 Các bạn đoàn viên, học sinh đã cùng nhau nhổ cỏ, vệ sinh khuôn viên, xới đất, và trồng thêm hoa hướng dương. Mỗi đôi tay là một phần việc nhỏ, nhưng khi cùng chung sức đã tạo nên một không gian rực rỡ, sạch đẹp và đầy sức sống.<br/>
+💛 Hoạt động không chỉ góp phần làm cho cảnh quan trường xanh – sạch – đẹp hơn mà còn lan tỏa thông điệp về ý thức giữ gìn môi trường, tinh thần xung kích tình nguyện và niềm tự hào của tuổi trẻ mỗi khi Tết đến xuân về.
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766230905/z7347403762384_67d0d60a7ffbecf763d449418e0e095a_dahx5b.jpg"
+            />
+            <div class="content">
+              <h4>
+                🌟ĐẠI HỘI ĐẠI BIỂU ĐOÀN TNCS HỒ CHÍ MINH TRƯỜNG THPT PHƯỚC THẠNH NHIỆM KỲ 2025 - 2026
+              </h4>
+              <p>
+                🌺 Ngày 02/10/2025, Đoàn TNCS Hồ Chí Minh trường THPT Phước Thạnh đã long trọng tổ chức Đại hội Đại biểu 
+                Đoàn TNCS Hồ Chí Minh nhiệm kỳ 2025 – 2026. Đây là sự kiện chính trị quan trọng của tuổi trẻ nhà trường, đánh dấu bước chuyển mình
+                 mới trong công tác Đoàn và phong trào thanh niên. <br/>
+                 🌺Tại đại hội, các đại biểu đã tập trung thảo luận, đánh giá kết quả công tác Đoàn và phong trào thanh niên nhiệm kỳ 2024 – 2025. Trong nhiệm kỳ vừa qua, Đoàn trường đã triển khai nhiều phong trào, hoạt động sôi nổi, thiết thực như: phong trào “Học sinh 3 tốt”, chiến dịch “Hoa phượng đỏ”, các hoạt động tình nguyện vì cộng đồng, chương trình “Mỗi chi đoàn một ý tưởng sáng kiến được hiện thực hóa”,
+                  các diễn đàn tư vấn tâm lý, hướng nghiệp… Qua đó góp phần rèn luyện bản lĩnh chính trị, bồi dưỡng lý tưởng cách mạng và kỹ năng sống cho đoàn viên, thanh niên.<br/>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="section-gallery">
-        <h3>Một số hình ảnh của câu lạc bộ</h3>
+        <h3>Một số hình ảnh của nhà trường</h3>
         <div class="gallery-img">
           <img
-            src="https://1clip.bacgiangtv.vn/upload/news/2_2025/untitled_10264507022025.png"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231790/z7347428401251_ce82b5022df4ca6208ef8c9ee0ef17c7_shllq2.jpg"
           />
           <img
-            src="https://images2.thanhnien.vn/Uploaded/gianglao/2022_12_09/messi-5690.jpeg"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231790/z7347428415123_429ecf2582afee8a765aeae8553fe183_xjmjzd.jpg"
           />
           <img
-            src="https://thethaovietnamplus.vn/uploads/images/2022/09/28/neyma-dap-tra-1664331205.jpg"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231793/z7347428409278_f39f39ca9e589d33b6fedbfebf612dde_mxloln.jpg"
           />
           <img
-            src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/69fe/live/6e01bc20-da7d-11f0-a8dc-93c15fe68710.jpg"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231797/z7347428422763_991cfc3f7ef94e75326962d8839abf95_z8wt2i.jpg"
           />
           <img
-            src="https://static.bongda24h.vn/medias/original/2020/11/11/eden-hazard.jpg"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231794/z7347428433346_373e3fc1230507d5fc520fca724f03a3_ciudti.jpg"
           />
           <img
-            src="https://vcdn1-vnexpress.vnecdn.net/2022/10/25/-6388-1666691852.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=oq-bmpKHNXVp1yhebya_fQ"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231791/z7347428430789_70b20770b634ef9b77c5c8aa6e5f1936_maj98o.jpg"
           />
           <img
-            src="https://media.cnn.com/api/v1/images/stellar/prod/220626110534-01-gareth-bale-real-madrid-180526.jpg?q=w_1110,c_fill"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231792/z7347428419531_579aae59f6d322899911a688a24113b4_rq9jck.jpg"
           />
           <img
-            src="https://media.cnn.com/api/v1/images/stellar/prod/221017111358-01-karim-benzema.jpg?c=original"
-          />
-          <img
-            src="https://c.files.bbci.co.uk/71f4/live/326f1090-1765-11ef-806c-bf47bb1274cd.jpg"
+            src="https://res.cloudinary.com/djbhs9k3o/image/upload/v1766231791/z7347428442452_1b1ff683be2d7f7a2f9ef63bd7e39c5c_nglkae.jpg"
           />
         </div>
       </div>
@@ -440,6 +633,10 @@
     <footer>
       <h3>Xã Phước Thạnh, TP. Mỹ Tho, Tiền Giang</h3>
       <p>© Trường THPT Phước Thạnh - Hành trình trưởng thành & Tỏa sáng</p>
+      <p>© Được thực hiện bởi nhóm của lớp 12A3 với những thành viên:<br/> Trần Thảo Ngọc<br/>
+Huỳnh Minh Thư<br/>
+Nguyễn Lê Thanh Tuyền<br/>
+Phan Thị Thanh Thảo<br/></p>
     </footer>
   </body>
 </html>
